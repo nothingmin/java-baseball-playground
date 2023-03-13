@@ -19,4 +19,10 @@ public class StringTest {
         assertThat(split).contains("1");
         assertThat(split).contains("2");
     }
+    @Test
+    void split_only_one(){
+        String given = "1";
+        String[] split = given.split(",");
+        assertThat(split).containsExactly("1");
+    }
 }
