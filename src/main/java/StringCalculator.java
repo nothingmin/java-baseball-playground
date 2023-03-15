@@ -8,7 +8,7 @@ public class StringCalculator {
         this.strings = strings;
     }
 
-    public void calculate(){
+    public int calculate(){
         int result = 0;
         for (int i=0; i<strings.length;i += 2){
             if(i == 0){
@@ -31,7 +31,9 @@ public class StringCalculator {
                     break;
             }
         }
-        System.out.println("result = " + result);
+        return result;
     }
+
+
 
 }

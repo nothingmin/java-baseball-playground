@@ -7,6 +7,7 @@ public class main {
         String value = scanner.nextLine();
         String[] values = value.split(" ");
         StringCalculator stringCalculator = new StringCalculator(values);
-        stringCalculator.calculate();
+        int result = stringCalculator.calculate();
+        System.out.println("result = " + result);
     }
 }
