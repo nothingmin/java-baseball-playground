@@ -24,3 +24,13 @@ git checkout main // 기본 브랜치가 main인 경우
 git checkout -b 브랜치이름
 ex) git checkout -b apply-feedback
 ```
+
+---
+## 요구사항
+1. 컴퓨터가 겹치지 않는 랜덤 숫자 생성
+2. 한 줄 입력 받기 
+3. 입력값 출력 
+4. 입력에 따라 비교, 종료, 새게임 
+5. 입력값 판정 
+6.판정 출력 
+6. 게임 종료
