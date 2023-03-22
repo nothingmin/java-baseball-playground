@@ -1,14 +1,12 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Objects;
 
-public class Dealer {
+public class RandomNumbers {
     private int length = 3;
     private ArrayList<Integer> numbers = new ArrayList<>(3);
     private int min = 1;
     private int max = 10;
 
-    public Dealer() {
+    public RandomNumbers() {
         this.numbers = this.generateRandomNumbers();
     }
     public ArrayList<Integer> generateRandomNumbers(){
@@ -31,5 +29,24 @@ public class Dealer {
 
     private Integer getRandomInt(){
         return (int) (Math.random()*(max-min)) + min;
+    }
+
+    public ArrayList<Integer> compare(ArrayList<Integer> input){
+        int strike =0;
+        int ball = 0;
+        for(int i =0;i<this.length;i++){
+            if(!this.numbers.contains(input.get(i))) {
+                continue;
+            }
+            if(this.numbers.get(i).equals(input.get(i))){
+                strike += 1;
+                continue;
+           }
+            ball += 1;
+        }
+        ArrayList<Integer> result = new ArrayList<>();
+        result.add(strike);
+        result.add(ball);
+        return result;
     }
 }
