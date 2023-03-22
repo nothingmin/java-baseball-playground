@@ -13,7 +13,7 @@ public class Input {
     public ArrayList<Integer> inputNumbers(){
         String value = "";
         while(value.length() != 3){
-            System.out.print("Input Number : ");
+            System.out.print("숫자를 입력해 주세요 : ");
             value = scanner.nextLine();
         }
         return Arrays.stream(value.split(""))
@@ -23,8 +23,6 @@ public class Input {
 
     public boolean inputExit(){
         while(true){
-            System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료\n" +
-                    "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요. : ");
             String value = scanner.nextLine();
             if (value.length() != 1){
                 continue;
