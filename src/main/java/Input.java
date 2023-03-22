@@ -10,9 +10,12 @@ public class Input {
         this.scanner = scanner;
     }
 
-    public ArrayList<Integer> inputNumber(){
-        System.out.print("Input Number : ");
-        String value = scanner.nextLine();
+    public ArrayList<Integer> inputNumbers(){
+        String value = "";
+        while(value.length() != 3){
+            System.out.print("Input Number : ");
+            value = scanner.nextLine();
+        }
         return Arrays.stream(value.split(""))
                 .map(Integer::parseInt)
                 .collect(Collectors.toCollection(ArrayList::new));
