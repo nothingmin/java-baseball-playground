@@ -1,10 +1,7 @@
 import java.util.ArrayList;
 
 public class RandomNumbers {
-    private int length = 3;
-    private ArrayList<Integer> numbers = new ArrayList<>(3);
-    private int min = 1;
-    private int max = 10;
+    public ArrayList<Integer> numbers;
 
     public RandomNumbers() {
         this.numbers = this.generateRandomNumbers();
@@ -12,29 +9,31 @@ public class RandomNumbers {
     public ArrayList<Integer> generateRandomNumbers(){
         ArrayList<Integer> randomNumbers = new ArrayList<>(3);
         for (int i = 0; i < 3; i++) {
-            Integer num = generateNonDuplicateNumber();
+            Integer num = generateNonDuplicateNumber(randomNumbers);
             randomNumbers.add(num);
         }
         return randomNumbers;
     }
 
-    private Integer generateNonDuplicateNumber() {
+    private Integer generateNonDuplicateNumber(ArrayList<Integer> randomNumbers) {
         Integer num = this.getRandomInt();
-        while (this.numbers.contains(num)) {
+        while (randomNumbers.contains(num)) {
             num = this.getRandomInt();
-            System.out.println(this.numbers.contains(num));
         }
         return num;
     }
 
     private Integer getRandomInt(){
-        return (int) (Math.random()*(max-min)) + min;
+        int min = 1;
+        int max = 10;
+        return (int) (Math.random()*(max - min)) + min;
     }
 
     public ArrayList<Integer> compare(ArrayList<Integer> input){
         int strike =0;
         int ball = 0;
-        for(int i =0;i<this.length;i++){
+        int length = 3;
+        for(int i = 0; i< length; i++){
             if(!this.numbers.contains(input.get(i))) {
                 continue;
             }
