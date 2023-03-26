@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-        Input input = new Input(new Scanner(System.in));
+        Input input = new Input();
         ResultView resultView = new ResultView();
         boolean exit = false;
         while(!exit){
