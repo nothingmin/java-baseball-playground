@@ -17,4 +17,10 @@ public class NumberTest {
         GameNumber given = new GameNumber(1,2);
         assertThat(number.compare(given)).isEqualTo(NumberStatus.BALL);
     }
+    @Test
+    void strike(){
+        GameNumber number = new GameNumber(1,1);
+        GameNumber given = new GameNumber(1,1);
+        assertThat(number.compare(given)).isEqualTo(NumberStatus.STRIKE);
+    }
 }
