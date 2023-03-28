@@ -19,7 +19,7 @@ public class GameNumbers {
     public NumberStatus compare(GameNumber gameNumber) {
         return gameNumbers.stream()
                 .map(answer -> answer.compare(gameNumber))
-                .filter(answer -> answer != NumberStatus.NOTHING)
+                .filter(result -> !result.isNothing())
                 .findFirst()
                 .orElse(NumberStatus.NOTHING);
     }
