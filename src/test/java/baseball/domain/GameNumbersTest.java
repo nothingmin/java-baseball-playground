@@ -15,6 +15,11 @@ public class GameNumbersTest {
     @Test
     void compare_ball(){
         GameNumbers gameNumbers = new GameNumbers(Arrays.asList(1,2,3));
-        assertThat(gameNumbers.compare(new GameNumber(1, 2))).isEqualTo(NumberStatus.BALL);
+        assertThat(gameNumbers.compare(new GameNumber(1, 1))).isEqualTo(NumberStatus.BALL);
+    }
+    @Test
+    void compare_strike(){
+        GameNumbers gameNumbers = new GameNumbers(Arrays.asList(1,2,3));
+        assertThat(gameNumbers.compare(new GameNumber(1, 0))).isEqualTo(NumberStatus.STRIKE);
     }
 }
