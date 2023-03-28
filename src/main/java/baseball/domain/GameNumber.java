@@ -10,7 +10,14 @@ public class GameNumber {
     }
 
     public NumberStatus compare(GameNumber given) {
-
+        if(given.isSameNumber(this.number)){
+            return NumberStatus.BALL;
+        }
         return NumberStatus.NOTHING;
+
+    }
+
+    private boolean isSameNumber(int number) {
+        return this.number == number;
     }
 }
