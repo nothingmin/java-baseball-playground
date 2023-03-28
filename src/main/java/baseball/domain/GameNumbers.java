@@ -23,4 +23,13 @@ public class GameNumbers {
                 .findFirst()
                 .orElse(NumberStatus.NOTHING);
     }
+
+    public PlayResult play(GameNumbers input) {
+        PlayResult playResult = new PlayResult();
+        for (GameNumber gameNumber : gameNumbers) {
+            NumberStatus status = input.compare(gameNumber);
+            playResult.addStatus(status);
+        }
+        return playResult;
+    }
 }
