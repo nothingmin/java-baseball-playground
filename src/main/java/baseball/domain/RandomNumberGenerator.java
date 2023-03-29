@@ -20,9 +20,9 @@ public class RandomNumberGenerator {
 
     private int uniqueRandomNumber() {
         Random random = new Random();
-        int randomNumber = random.nextInt(10) + 1;
+        int randomNumber = random.nextInt(9) + 1;
         while(numbers.contains(randomNumber)){
-            randomNumber = random.nextInt(10) + 1;
+            randomNumber = random.nextInt(9) + 1;
         }
         return randomNumber;
     }
